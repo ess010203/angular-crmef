@@ -1,0 +1,110 @@
+<!--<div class="main-content">
+    <div>
+        <nav class="navbar">
+            <input class="form-text" type="text" name="cherche" [(ngModel)]="cherche" (ngModelChange)="Search()" placeholder="cherche">
+        </nav>
+    </div>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Simple Table</h4>
+                      <p class="card-category"> Here is a subtitle for this table</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      title
+                                  </th>
+                                  <th>
+                                      hours
+                                  </th>
+                                  <th>
+                                      category
+                                  </th>
+                                  <th>
+                                      hours
+                                  </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let data of mydata">
+                                      <td>
+                                          {{data.id}}
+                                      </td>
+                                      <td>
+                                          {{data.title}}
+                                      </td>
+                                      <td>
+                                          {{data.hours}}
+                                      </td>
+                                      <td>
+                                          {{data.category}}
+                                      </td>
+                                      <td class="text-primary">
+                                          {{data.hours}}
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>-->
+
+
+<!--
+2
+-->
+<div class="main-content">
+    <div class="container mt-4 cherche">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-9">
+                <div class="card p-4 mt-3">
+                    <div class="d-flex justify-content-center px-5">
+                        <div class="search"> <input type="text" class="search-input" placeholder="cherche..." name="cherche" [(ngModel)]="cherche" (ngModelChange)="Search()"> <a href="#" class="search-icon bg-danger"> <i class="fa fa-search"></i> </a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Simple Table</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+
+                                <tbody>
+                                <tr *ngFor="let data of mydata | paginate : {itemsPerPage:4,currentPage:p};">
+                                    <a [routerLink]="['/typography',data]">
+                                        <td>{{data.id}}</td>
+                                        <td>{{data.title}}</td>
+                                    </a>
+                                </tr>
+                                </tbody>
+                                <pagination-controls class="pagination" (pageChange)="p = $event" ></pagination-controls>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

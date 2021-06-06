@@ -1,0 +1,48 @@
+<div>
+<div class="main-content">
+    <header>
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="../assets/videos/video.mp4" type="video/mp4">
+        </video>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-3">Video Header</h1>
+                    <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div *ngIf="categories != null" class="container-fluid">
+      <div class="row">
+          <div *ngFor="let category of categories" class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-warning card-header-icon " >
+                      <div class="card-icon" style="padding: 2px!important;">
+                          <img [src]="category.catImage" style="background-size: cover;width: 100px;height: 100px">
+                      </div>
+                      <p style="height: 78px;margin-top: auto" class="card-category">{{category.categoryName}}</p>
+                      <h3 class="card-title">50
+                      </h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons text-info">ads_click</i>
+                          <a class="text" href="javascript:void(0)">click ici pour voir</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+</div>
+
+
+</div>
+
+<!--<app-footer></app-footer>-->
+
+

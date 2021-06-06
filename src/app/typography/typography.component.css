@@ -1,0 +1,13 @@
+
+.card{
+
+    box-shadow: none!important;
+    margin-top: 0px!important;
+}
+
+.main-content{
+    margin-top: 130px!important;
+}
+.card-stats .card-header.card-header-icon, .card-stats .card-header.card-header-text {
+    text-align: left!important;
+}

@@ -16,6 +16,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { NewsDetailsComponent } from './news-details/news-details.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    NewsDetailsComponent,
 
 
   ],

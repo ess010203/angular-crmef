@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 import {CategoryService} from "../controller/services/category.service";
+import {NewsService} from "../controller/services/news.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,11 @@ import {CategoryService} from "../controller/services/category.service";
 export class DashboardComponent implements OnInit {
 
     categories: any;
+    news : any;
 
 
 
-  constructor(private categoryService :CategoryService) {
+  constructor(private categoryService :CategoryService,private newsService: NewsService) {
 
 
   }
@@ -26,8 +28,18 @@ export class DashboardComponent implements OnInit {
             }
         )
     }
+
+    getListNews(){
+        this.newsService.getList().subscribe(
+            data=>{
+                this.news = data;
+            }
+        )
+    }
+
     ngOnInit() {
         this.getListCategory();
+        this.getListNews();
     }
 
   

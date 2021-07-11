@@ -67,9 +67,23 @@
 -->
 <div class="main-content">
     <div class="container mt-4 cherche">
+
         <div class="row d-flex justify-content-center">
-            <div class="col-md-9">
+
+            <div class="col-md-10">
                 <div class="card p-4 mt-3">
+                    <div class="col-md-4 ">
+                        <form>
+                            <mat-form-field appearance="fill">
+                                <mat-label>category</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let category of listCategory" [value]="category.categoryName">
+                                        {{category.categoryName}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </form>
+                    </div>
                     <div class="d-flex justify-content-center px-5">
                         <div class="search"> <input type="text" class="search-input" placeholder="cherche..." name="cherche" [(ngModel)]="cherche" (ngModelChange)="Search()"> <a href="#" class="search-icon bg-danger"> <i class="fa fa-search"></i> </a> </div>
                     </div>
@@ -82,8 +96,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Simple Table</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
+                        <h4 class="card-title ">Table des cours</h4>
+                        <p class="card-category"> </p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

@@ -3,27 +3,19 @@
     <div class="row">
     <div class="card">
         <div class="card-header card-header-danger">
-            <h4 class="card-title">Material Dashboard Heading</h4>
-            <p class="card-category">Created using Roboto Font Family</p>
+            <div class="tim-typo">
+                <h1><span class="tim-note align-items-center justify-content-cente"></span>{{datapk.title}} </h1>
+            </div>
             <div style="background-color: rgba(255,255,255,0) ;border-opacity: 0;height: 155px;width: 100%" class="card row align-items-center justify-content-cente">
                 <img style="opacity: 1; width: 400px;height: 260px ;" class="border border-danger rounded float-start" [src]="mainImage">
             </div>
         </div>
-        <div class="card-body mt-5">
-            <div id="typography ">
-                <div class="row">
-                    <div class="tim-typo">
-                        <h1><span class="tim-note"></span>{{datapk.title}} </h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
     </div>
     <div class="container-fluid " style="padding-left: 0px;padding-right: 0px">
         <div class="row">
             <div class="bg-dark" style="margin: auto " >
-                <p>{{datapk.description}}</p>
                 <div  *ngFor="let im of datapk.images">
                     <img style="background-position: center;width: 80%;margin-left: 10%" [src]="im.image">
 

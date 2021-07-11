@@ -11,9 +11,14 @@ export class NotificationsComponent implements OnInit {
   constructor(private http : HttpClient) { }
 
   dataquizzes :any ;
+  dataansers:any ;
+  p : number = 1;
+  question : any ;
+  voirreponce = false;
+  n : number = 0;
 
 
-  get(){
+  getQuizes(){
       this.http.get('http://127.0.0.1:8000/api/quizzes/').subscribe(
           data =>{
               console.log("data ==== " +data)
@@ -21,9 +26,26 @@ export class NotificationsComponent implements OnInit {
           }
       )
   }
+  getAnsewer(){
+        this.http.get('http://127.0.0.1:8000/api/answer/').subscribe(
+            data =>{
+                console.log("data ==== " +data)
+                this.dataansers = data
+            }
+        )
+    }
+
+    getQuestion(){
+        this.http.get('http://127.0.0.1:8000/api/question/').subscribe(
+            data =>{
+                console.log("data ==== " +data)
+                this.question = data
+            }
+        )
+    }
 
     ngOnInit() {
-      this.get()
+        this.getQuestion()
     }
 
   /*showNotification(from, align){
@@ -56,4 +78,10 @@ export class NotificationsComponent implements OnInit {
   }*/
 
 
+    repense(verified) {
+        this.n = verified;
+        this.voirreponce = true;
+
+         console.log(this.n)
+    }
 }

@@ -1,12 +1,48 @@
-.card .card-title{
-    font-size: 24px!important;
-    font-weight: 900!important;
-}
-.card{
-
-    margin-top: 0px!important;
+body {
+    background-color: #eee
 }
 
-.main-content{
-    margin-top: 130px!important;
+label.radio {
+    cursor: pointer
+}
+
+label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+}
+
+label.radio span {
+    padding: 4px;
+    border: 1px solid red;
+    display: inline-block;
+    color: #7b1fa2;
+    width: content-box;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 3px;
+    margin-top: 7px;
+    text-transform: uppercase
+}
+
+label.radio input:checked+span {
+    border-color: #00bfa5;
+    background-color: #00bfa5;
+    color: #7b1fa2;
+}
+
+.ans {
+    margin-left: 36px !important
+}
+
+.btn:focus {
+    outline: 0 !important;
+    box-shadow: none !important
+}
+
+.btn:active {
+    outline: 0 !important;
+    box-shadow: none !important
 }

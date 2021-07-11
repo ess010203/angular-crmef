@@ -15,12 +15,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {NgxPaginationModule} from "ngx-pagination";
-import {QuizzesComponent} from "../../quizzes/quizzes.component";
-import {QuizDetailComponent} from "../../quizzes/quiz-detail/quiz-detail.component";
-import {QuizListComponent} from "../../quizzes/quiz-list/quiz-list.component";
-import {QuizResultComponent} from "../../quizzes/quiz-result/quiz-result.component";
-import {QuestionComponent} from "../../quizzes/quiz-detail/question/question.component";
-import {AnswerComponent} from "../../quizzes/quiz-detail/question/answer/answer.component";
+import {QuizComponent} from "../../quiz/quiz.component";
 
 @NgModule({
   imports: [
@@ -42,12 +37,8 @@ import {AnswerComponent} from "../../quizzes/quiz-detail/question/answer/answer.
     TableListComponent,
     TypographyComponent,
     NotificationsComponent,
-    QuizzesComponent,
-    QuizDetailComponent,
-    QuizListComponent,
-    QuizResultComponent,
-    QuestionComponent,
-    AnswerComponent,
+    QuizComponent,
+
 
   ]
 })

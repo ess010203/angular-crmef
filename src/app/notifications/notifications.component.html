@@ -1,121 +1,45 @@
-<!--
+
 <div class="main-content">
-  <div class="container-fluid">
-      <div class="card">
-          <div class="card-header card-header-danger">
-              <h3 class="card-title">Notifications</h3>
-              <p class="card-category">Handcrafted by our friend
-                  <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the
-                  <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a>
-              </p>
-          </div>
-          <div class="card-body">
-              <div class="row">
-                  <div class="col-md-5">
-                      <h4 class="card-title">choisi niveau</h4>
-                      <div class="alert alert-info">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>This is a notification with close button.</span>
-                      </div>
-                      <div class="alert alert-info">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>This is a notification with close button.</span>
-                      </div>
-                      <div class="alert alert-info">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>This is a notification with close button.</span>
-                      </div>
-                  </div>
-                  <div class="col-md-5">
-                      <h4 class="card-title">cours de niveau</h4>
-                      <div class="alert alert-info">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>
-                              <b> Info - </b> This is a regular notification made with</span>
-                      </div>
-                      <div class="alert alert-success">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>
-                              <b> Success - </b> This is a regular notification made with ".alert-success"</span>
-                      </div>
-                      <div class="alert alert-warning">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>
-                              <b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
-                      </div>
-                      <div class="alert alert-danger">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>
-                              <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                      </div>
-                      <div class="alert alert-primary">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>
-                              <b> Primary - </b> This is a regular notification made with ".alert-primary"</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-12">
-              <div class="places-buttons">
-                  <div class="row">
-                      <div class="col-md-6 ml-auto mr-auto text-center">
-                          <h4 class="card-title">
-                              Notifications Places
-                              <p class="category">Click to view notifications</p>
-                          </h4>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-                          <div class="row">
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','left')">Top Left</button>
-                              </div>
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','center')">Top Center</button>
-                              </div>
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','right')">Top Right</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-                          <div class="row">
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('bottom','left')">Bottom Left</button>
-                              </div>
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('bottom','center')">Bottom Center</button>
-                              </div>
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('bottom','right')">Bottom Right</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card">
+                <!--<div *ngFor="let d of dataquizzes">
+                    <h1>{{d.description}}</h1>
+                    <h1>{{d.name}}</h1>
+                </div>-->
+                <div class="container mt-5">
+                    <div class="d-flex justify-content-center row">
+                        <div class="col-md-10 col-lg-10">
+                            <div class="border">
+                                <div class="question bg-white p-3 border-bottom">
+                                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                                        <h4 style="font-size: 22px">Quiz</h4><span class="mr-5" style="font-size: 22px" *ngIf="question != null">{{question.length}} question</span>
+                                    </div>
+                                </div>
+                                <div class="question bg-white p-3 border-bottom" *ngFor="let dq of question| paginate : {itemsPerPage:2,currentPage:p};">
+                                    <div class="d-flex flex-row align-items-center question-title" >
+                                        <h3 class="text-danger">Q.</h3>
+                                        <h5 class="mt-1 ml-2">{{dq.label}}</h5>
+                                    </div>
+                                    <div class="ans ml-2" *ngFor="let re of dq.answer_set">
+                                        <label class="radio" > <input type="radio"><span [ngStyle]="{ backgroundColor  : (voirreponce && dq.quiz == n) ?re.is_correct ?  '#5cb85c' : 'red': '' }">{{re.label}}</span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                                        <button style="width: 200px" class="btn btn-primary border-success align-items-center btn-success" type="button" (click)="repense(dq.quiz)">réponse<i class="fa fa-eye ml-2"></i></button>
+                                        <p class="text-info card"></p>
+                                    </div>
+                                </div>
+
+
+                                <pagination-controls class="pagination" (pageChange)="p = $event" ></pagination-controls></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 </div>
--->
-<app-quizzes></app-quizzes>
